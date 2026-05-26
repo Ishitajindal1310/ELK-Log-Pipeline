@@ -1,0 +1,12 @@
+filebeat.inputs:
+- type: filestream
+  enabled: true
+  paths:
+    - /app.log
+
+  parsers:
+    - ndjson:
+        target: ""
+
+output.logstash:
+  hosts: ["logstash:5044"]
